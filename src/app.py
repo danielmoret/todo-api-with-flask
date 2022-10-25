@@ -15,6 +15,7 @@ def hello_world():
 
 @app.route('/todos', methods=['POST'])
 def add_new_todo():
+    global todos
     request_body = request.data
     decoded_object = json.loads(request_body)
     todos.append(decoded_object)
